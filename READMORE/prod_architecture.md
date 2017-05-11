@@ -15,7 +15,7 @@
    
    2、平台整体结构如下：
    
-        <div align=center><img width="900" height="" src="./image/system_arch.png"/></div>
+   <div align=center><img width="900" height="" src="../image/system_arch.png"/></div>
    
    3、模块介绍
    
@@ -39,7 +39,7 @@
    
 ## 应用的生命
 
-<div align=center><img width="900" height="" src="./image/application_live.png"/></div>
+<div align=center><img width="900" height="" src="../image/application_live.png"/></div>
 
 
 ## springcloud 应用生产环境的结构图
