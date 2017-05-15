@@ -17,6 +17,7 @@
    
    1、为什么采用这种架构？
    
+   
    2、平台整体结构如下：
    
    <div align=center><img width="400" height="" src="../image/system_arch.png"/></div>
@@ -45,22 +46,89 @@
 
 <div align=center><img width="500" height="" src="../image/application_live.png"/></div>
 
+## Piggymetrics应用结构图
 
-## springcloud 应用结构图
+<div align=center><img width="300" height="" src="../image/服务关系图.png"/></div>
 
+## 配置中心高可用部署图
 
-## springcloud 服务发现机制
+<div align=center><img width="300" height="" src="../image/config-server.png"/></div>
 
+## 服务注册发现机制
+
+1、采用eureka server进行服务注册发现管理
+
+2、采用3个对等节点进行两两注册实现高可用，结构图
+
+<div align=center><img width="300" height="" src="../image/eureka.png"/></div>
 
 ## springcloud 服务容错机制
 
+1、采用hystrix进行熔断处理，通过hystrix dashboard图形化展示；如图
 
-## springcloud 服务编排
+<div align=center><img width="300" height="" src="../image/hystrix.png"/></div>
 
+2、有默认的主动拉的方式变成的通过mq消息队列进行推模式，结构上更简单，效率上更实时
+
+## k8s服务编排
+
+1、什么是服务编排？
+
+2、k8s如何进行服务编排？
+
+3、服务编排详细信息(通过yaml文件描述)
 
 ## springcloud 日志采集
 
+1、通过EFKA（elasticsearch fluentd kibana kafka）进行日志收集和展示
+
+2、收集结构图
+
+<div align=center><img width="500" height="" src="../image/log.png"/></div>
+
 ## springcloud 监控体系
 
+1、通过实时的日志采集系统获取日志信息，利用时间窗口的技术利用进行日志分析
+
+2、分析结构图
+
+<div align=center><img width="500" height="" src="../image/monitor.png"/></div>
 
 ## springcloud 性能优化
+
+1、注册中心配置优化
+
+    eureka:
+      instance:
+        prefer-ip-address: true
+      client:
+        registerWithEureka: false
+        fetchRegistry: false
+        server:
+          waitTimeInMsWhenSyncEmpty: 0
+      server
+        eviction-interval-timer-in-ms: 4000
+        enableSelfPreservation: false
+        renewalPercentThreshold: 0.9
+        
+2、zuul配置优化
+
+    ribbon:
+      ReadTimeout: 20000
+      ConnectTimeout: 20000
+      MaxAutoRetries: 1
+      
+    zuul:
+      host:
+        connect-timeout-millis: 20000
+        socket-timeout-millis: 20000
+        
+3、Feign配置
+
+    #请求和响应GZIP压缩支持
+    feign.compression.request.enabled=true
+    feign.compression.response.enabled=true
+    #支持压缩的mime types
+    feign.compression.request.enabled=true
+    feign.compression.request.mime-types=text/xml,application/xml,application/json
+    feign.compression.request.min-request-size=2048
