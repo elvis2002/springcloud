@@ -293,34 +293,10 @@ Feign同时可以引用注册中心以外的服务没，例如在统计服务模
      
 5. 运行所有的镜像，参考[快速部署](#快速部署)
      
-# <a name="生产环境"></a>生产环境
-
-* `TODO` CI/CD
-* `TODO` 扩容
-* `TODO` 服务容错
-* `TODO` 业务监控／性能分析
-* `TODO` K8s部署
-
-# <a name="常见问题"></a>常见问题
-
-任何相关问题均可通过[GitHub ISSUE](https://github.com/cloudframeworks-springcloud/user-guide/issues)提交或讨论，问题总结请查看[[QA](QA.md)]
-
-# <a name="更新计划"></a>更新计划
-
-* `文档` 增加在线演示
-* `组件` 增加组件内容，如Spring Cloud Sleuth、Spring Cloud Consul等
-* `生产环境` 增加生产环境下各项扩展操作，如性能测试及各类部署、特性、技术实现等
-* `快速部署` 增加好雨云帮部署
-* `常见问题` 问题汇总
-
-点击查看[历史更新](CHANGELOG.md)
-
+-------
 # <a name="社群贡献"></a>社群贡献
-
-+ QQ群: 531980120
-+ [参与贡献](CONTRIBUTING.md)
-+ [联系我们](mailto:info@goodrain.com)
-
++ QQ群: 34782297
++ [联系我们](mailto:zhangb2002@163.com)
 -------
 
-[云框架](ABOUT.md)系列主题，遵循[APACHE LICENSE 2.0](LICENSE.md)协议发布。
+遵循[APACHE LICENSE 2.0](LICENSE.md)协议发布。
